@@ -13,6 +13,11 @@ public class PostsApiController {
 
     private final PostsService postsService;
 
+    @GetMapping("/api/v1/posts")
+    public String hello() {
+        return "hello world!";
+    }
+
     @PostMapping("/api/v1/posts")
     public Long save(@RequestBody PostsSaveRequestDto requestDto) {
         return postsService.save(requestDto);
